@@ -1,0 +1,39 @@
+
+<div>
+  <h6>Property Binding</h6>
+<input type="{{isText}}" name="" [value]="data"> 
+<!-- property binding we can use on attribute only -->
+<!-- interpolation works with string value only -->
+<h5>{{4+6}}</h5>
+
+<div [hidden]="isHidden">this is for checking purpose; property binding</div>
+
+<button class="btn btn-success" [disabled]="isHidden">please subscribe to thapa technical</button><br><br>
+
+<button class="btn btn-danger" bind-disabled = "isHidden">please like and share</button><br>
+<!-- bind-propertyname is canonical form it is alternative form of writing property into square bracket -->
+
+</div>
+
+<div>
+<h6>Event Binding</h6>
+<pre><input type="text" name="" [value]="texts">&nbsp;<button class="btn btn-primary btn-sm" (click)="myFunction()">Event Binding</button></pre>
+</div>
+
+<div>
+  <button class="btn btn-primary btn-sm" value="welcome" (click)="myFun($event)">show button value</button>
+
+</div>
+<br>
+<div>
+  <h6>event binding and interpolation</h6>
+  <label>enter server name:</label>
+  <input type="text" class="form-control" (input)="onUpdate($event)">
+  <h6>{{serverName}}</h6>
+</div>
+<div>
+  <h6>two way data binding</h6>
+  <label>enter 2nd server name:</label>
+  <input type="text" class="form-control" [(ngModel)]="serverName2">
+  <h6>{{serverName2}}</h6>
+</div>
